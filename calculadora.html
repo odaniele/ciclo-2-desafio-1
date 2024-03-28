@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora de Pagamento</title>
 </head>
 <body>
-    
-    <script> src="./calculadora.js"</script>   
+
+Valor da conta: <br>
+<input type="number" id="valor" step="0.01"><br>
+
+Número de pessoas na mesa: <br>
+<input type="number" id="pessoas" step="1"><br>
+
+Método de pagamento: <br>
+<select id="metodo">
+  <option value="1">Pix/Dinheiro</option>
+  <option value="2">Crédito</option>
+</select><br>
+
+<input type="button" value="Calcular pagamento" onclick="calcularPagamento()">
+
+<script>
+function calcularPagamento() {
+    // Recupera os valores dos campos do formulário
+    var valorConta = parseFloat(document.getElementById("valor").value);
+    var numeroPessoas = parseInt(document.getElementById("pessoas").value);
+    var metodo = parseInt(document.getElementById("metodo").value);
+
+    // Executa a lógica JavaScript original com base nos valores do formulário
+    var pagamentoCliente = valorConta / numeroPessoas;
+    var desconto = (pagamentoCliente / 100) * 10;
+
+    while(true){
+        console.log("Método de pagamento:");
+        if(metodo === 1) {
+            var pagamento = pagamentoCliente - desconto;
+            alert("Adicionado 10% de desconto!!\nO total deste cliente é: R$" + pagamento.toFixed(2));
+            break;
+        } else if(metodo === 2) { 
+            var pagamento = valorConta / numeroPessoas;
+            alert("O total deste cliente é: R$" + pagamento.toFixed(2));
+            break;
+        }
+    }
+}
+</script>
+
 </body>
 </html>

@@ -1,38 +1,25 @@
-/* 
-OBJETIVOS
-Inserir números de pessoas na mesa
-Valor total da conta
-Método de pagamento
-Valor que cada um irá pagar com desconto ou não
-
-*/
-
 const prompt = require('prompt-sync')();
 
-
-
-function contaMesa (){
+function calculaMesa (){
     valorConta = parseFloat(prompt("Informe o valor da conta: "));
     numeroPessoas = parseInt(prompt("Informe o número de pessoas na mesa: "));
     pagamentoCliente = valorConta / numeroPessoas;
-    desconto = (pagamentoCliente / 100) * 10; 
-
+    desconto = (pagamentoCliente / 100) * 10;
 
 while(true){
-    metodoPagamento = parseInt(prompt("Método de pagamento. Digite 1 para PIX, 2 para Dinheiro ou 3 para Crédito: "));
-    if(metodoPagamento === 1 || metodoPagamento === 2) {
+    console.log("Método de pagamento:");
+    metodoPagamento = parseInt(prompt("Digite 1 para PIX/Dinheiro ou 2 para Cartão: "));
+    if(metodoPagamento === 1) {
         pagamento = (pagamentoCliente) - (desconto); 
-        console.log("O total da sua parte é: R$", pagamento.toFixed(2));
-    }else{ 
+        console.log("Adicionado 10% de desconto!!");
+        console.log("O total deste cliente é: R$", pagamento.toFixed(2));
+    }if(metodoPagamento === 2) { 
         pagamento = valorConta / numeroPessoas;
-        console.log("O total da sua parte é: R$", pagamento.toFixed(2));
+        console.log("O total deste cliente é: R$", pagamento.toFixed(2));
         break;
     }
 }
 
 }
 
-contaMesa ()
-
-
-//teste
+calculaMesa ()
