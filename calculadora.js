@@ -10,6 +10,7 @@ while(true){
     metodoPagamento = parseInt(prompt("Método de pagamento. Digite 1 para PIX/Dinheiro ou 2 para Crédito: "));
     if(metodoPagamento === 1) {
         pagamento = (pagamentoCliente) - (desconto); 
+        console.log("Você ganhou um desconto de 10%!!");
         console.log("O total da sua parte é: R$", pagamento.toFixed(2));
     }else{ 
         pagamento = valorConta / numeroPessoas;
