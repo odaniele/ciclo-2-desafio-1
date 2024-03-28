@@ -22,4 +22,6 @@ while(true){
 
 }
 
-calculaMesa ()
+contaMesa ()
+
+
