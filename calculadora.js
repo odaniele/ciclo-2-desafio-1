@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')();
 
-function calculaMesa (){
+function calcularMesa (){
     valorConta = parseFloat(prompt("Informe o valor da conta: "));
     numeroPessoas = parseInt(prompt("Informe o número de pessoas na mesa: "));
     pagamentoCliente = valorConta / numeroPessoas;
@@ -22,6 +22,6 @@ while(true){
 
 }
 
-contaMesa ()
+calcularMesa ()
 
 
