@@ -2,14 +2,13 @@
 <html>
 <head>
     <title>Calculadora de Pagamento</title>
+    <link rel="stylesheet" href="calculadora.css"/>
 </head>
 <body>
-    <div class="mesa"></div>
     <img src="https://www.sinhoresosasco.com.br/storage/2020/02/restaurantemesa-site.png">
 
 Valor da conta: <br>
 <input type="number" id="valor" step="0.01"><br>
-
 Número de pessoas na mesa: <br>
 <input type="number" id="pessoas" step="1"><br>
 
@@ -17,10 +16,9 @@ Método de pagamento: <br>
 <select id="metodo">
   <option value="1">Pix/Dinheiro</option>
   <option value="2">Crédito</option>
+
 </select><br>
-
 <input type="button" value="Calcular pagamento" onclick="calcularMesa()">
-
 <script>
 function calcularMesa() {
     // Recupera os valores dos campos do formulário

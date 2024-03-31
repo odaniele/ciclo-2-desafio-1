@@ -1,7 +1,11 @@
 body{
-.mesa {
-    opacity: 0.5;
-    width: 700px;
-    margin: 0 auto;
+    text-align: center;
+    font-size: x-large;
+    position: absolute;
+    color: rgb(14, 3, 3);
+}
 
-} }
+    img{
+    height: 400px;
+    width: 100%;    
+}
