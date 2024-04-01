@@ -2,17 +2,21 @@
 <html>
 <head>
     <title>Calculadora de Pagamento</title>
+<<<<<<< HEAD
 
     <script src="calculadora.js"></script>
 
     <link rel="stylesheet" href="styles.css">
     
+=======
+    <link rel="stylesheet" href="calculadora.css"/>
+>>>>>>> 1d87760030c9ad2e947984cf2d26d5caf54a993a
 </head>
 <body>
+    <img src="https://www.sinhoresosasco.com.br/storage/2020/02/restaurantemesa-site.png">
 
 Valor da conta: <br>
 <input type="number" id="valor" step="0.01"><br>
-
 Número de pessoas na mesa: <br>
 <input type="number" id="pessoas" step="1"><br>
 
@@ -20,9 +24,39 @@ Método de pagamento: <br>
 <select id="metodo">
   <option value="1">Pix/Dinheiro</option>
   <option value="2">Crédito</option>
+
 </select><br>
+<<<<<<< HEAD
 
 <input type="button" value="Calcular pagamento" onclick="calcularPagamento()">
+=======
+<input type="button" value="Calcular pagamento" onclick="calcularMesa()">
+<script>
+function calcularMesa() {
+    // Recupera os valores dos campos do formulário
+    valorConta = parseFloat(document.getElementById("valor").value);
+    numeroPessoas = parseInt(document.getElementById("pessoas").value);
+    metodo = parseInt(document.getElementById("metodo").value);
+
+    // Executa a lógica JavaScript original com base nos valores do formulário
+    pagamentoCliente = valorConta / numeroPessoas;
+    desconto = (pagamentoCliente / 100) * 10;
+
+    while(true){
+        console.log("Método de pagamento:");
+        if(metodo === 1) {
+            let pagamento = pagamentoCliente - desconto;
+            alert("Adicionado 10% de desconto!!\nO total deste cliente é: R$" + pagamento.toFixed(2));
+            break;
+        } else if(metodo === 2) { 
+            let pagamento = valorConta / numeroPessoas;
+            alert("O total deste cliente é: R$" + pagamento.toFixed(2));
+            break;
+        }
+    }
+}
+</script>
+>>>>>>> 1d87760030c9ad2e947984cf2d26d5caf54a993a
 
 </body>
 

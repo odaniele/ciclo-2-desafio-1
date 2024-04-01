@@ -1,4 +1,12 @@
 
+<<<<<<< HEAD
+=======
+function calcularMesa (){
+    valorConta = parseFloat(prompt("Informe o valor da conta: "));
+    numeroPessoas = parseInt(prompt("Informe o número de pessoas na mesa: "));
+    pagamentoCliente = valorConta / numeroPessoas;
+    desconto = (pagamentoCliente / 100) * 10;
+>>>>>>> 1d87760030c9ad2e947984cf2d26d5caf54a993a
 
 function calcularPagamento() {
     // Recupera os valores dos campos do formulário
@@ -24,6 +32,12 @@ function calcularPagamento() {
     }
 }
 
+<<<<<<< HEAD
 
+=======
+}
+
+calcularMesa ()
+>>>>>>> 1d87760030c9ad2e947984cf2d26d5caf54a993a
 
 
