@@ -1,3 +1,4 @@
+
 /*function calcularPagamento() {
     // Recupera os valores dos campos do formulário
     valorConta = parseFloat(document.getElementById("valor").value);
@@ -7,6 +8,17 @@
     // Executa a lógica JavaScript original com base nos valores do formulário
     pagamentoCliente = valorConta / numeroPessoas;
     desconto = (pagamentoCliente / 100) * 10;
+
+
+function calcularPagamento() {
+    
+    let valorConta = parseFloat(document.getElementById("valor").value);
+    let numeroPessoas = parseInt(document.getElementById("pessoas").value);
+    let metodo = parseInt(document.getElementById("metodo").value);
+
+    let pagamentoCliente = valorConta / numeroPessoas;
+    let desconto = (pagamentoCliente / 100) * 10;
+>>>>>>> 78f8b362c563834279a4da6995cd994078200145
 
     while(true){
         console.log("Método de pagamento:");
@@ -51,4 +63,5 @@ function calcularPagamento() {
     }
 }
 
-   
+
+
