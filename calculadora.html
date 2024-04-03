@@ -1,7 +1,9 @@
-
+<!DOCTYPE html>
 <html>
 <head>
+    <h1>Cálculo da Mesa</h1>
     <title>Calculadora de Pagamento</title>
+    <img src="https://cdn-icons-png.flaticon.com/512/4564/4564998.png">
 
     <script src="calculadora.js"></script>
 
@@ -9,7 +11,7 @@
 </head>
 <body>
 
-Valor da conta: <br>
+Valor da conta R$: <br>
 <input type="number" id="valor" step="0.01"><br>
 
 Número de pessoas na mesa: <br>
@@ -21,7 +23,7 @@ Método de pagamento: <br>
   <option value="2">Crédito</option>
 </select><br>
 
-Incluir Gorjeta (10%): <input type="checkbox" id="gorjeta"><br>
+Incluir gorjeta (10%): <input type="checkbox" id="gorjeta"><br>
 
 <input type="button" value="Calcular pagamento" onclick="calcularPagamento()">
 
