@@ -1,3 +1,7 @@
+h1{
+    font-family:'Times New Roman', Times, serif
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #cea559;
@@ -27,7 +31,8 @@ input#valor, #pessoas {
 
 select#metodo {
     width: 135px;
-    height: 21px;
+    height: 25px;
+    margin-left: 5px;
     background-color: blanchedalmond;
     border-color: #f39519;   
     border: 2px;
@@ -35,9 +40,15 @@ select#metodo {
 
 input {
     text-align: center;
-    margin-left: 10px;
+    margin-top: 5px;
     width: 135px;
-    height: 21px;
+    height: 25px;
     background-color: blanchedalmond;
     border-color: #f39519;
+}
+
+input#gorjeta{
+    width: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
