@@ -1,5 +1,5 @@
 function calcularPagamento() {
-    // Recupera os valores dos campos do formulário
+    
     let valorConta = parseFloat(document.getElementById("valor").value);
     let numeroPessoas = parseInt(document.getElementById("pessoas").value);
     let metodo = parseInt(document.getElementById("metodo").value);
