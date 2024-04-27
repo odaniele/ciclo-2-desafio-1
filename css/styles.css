@@ -19,6 +19,7 @@
 }
 
 .container img{
+    width: 381px;
     max-width: 500px;
     height: auto;
     margin: 100px auto 40px auto;
@@ -49,6 +50,7 @@ label{
 }
 
 input#valorConta, #numeroPessoas, #opcaoTaxa{
+    font-family: "Inter";
     padding: 12px;
     border-radius: 5px;
     margin: 6px 2% 12px 2%;
@@ -73,32 +75,27 @@ div#modal-container{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: auto;
-    
-}
+} 
 
-span.close{
+span.close {
     color: #54595e;
     float: right;
+    border-radius: 29px;
     font-size: 28px;
-    font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 div#metodoPagamento.modal{  
     display: none;
     width: 465px;
-    height: 196px;
+    height: 180px;
     background-color: #ffffff;
-    border-color: #DEE2E6;
-    border: 1px solid;
     border-radius: 8px;
-} 
+    border: 1px solid #DEE2E6;
+}
 
 .modal-header h1{
     margin-top: 30px;
-    margin-bottom: 20px;
     font-family: "Inter";
     font-size: 20px;
     line-height: 24.2px;
@@ -121,27 +118,32 @@ div#metodoPagamento.modal{
     width: 180px;
     height: 44px;
     border-radius: 8px;
-    border-color: #4F4F4F;
     font-family: "Inter";
     font-size: 14px;
-    background-color: #ffffff;   
     margin-left: 32px;
 }
 
-.comDesconto{
+button.semDesconto{
+    background-color: #ffffff;
+    border: 1px solid #4F4F4F;
+}
+
+button.comDesconto{
     background-color: #284A5E;
     color: #ffffff;
 }
 
-.modal{
+div#modalResultado.modal{
     width: 465px;
-    height: 282px;
+    height: 270px;
     background-color: #ffffff;
-    border-color: #DEE2E6;
+    border: 1px solid #DEE2E6;
     border-radius: 8px;
-    border: 1px solid;
-    padding: 36px, 40px, 36px, 40px;
     display: none;
+}
+
+div#modalResultado h1{
+    margin-bottom: 13px;
 }
 
 div.modal-body-total p{
@@ -158,8 +160,6 @@ p#resultadoConta{
     line-height: 22px;
     text-align: center;
     color: #54595E99;
-
-
 }
 
 button#concluir{
@@ -172,5 +172,5 @@ button#concluir{
     font-family: "Inter";
     font-size: 14px;
     margin-left: 40px;
-    margin-top: 68px;
+    margin-top: 33px;
 }

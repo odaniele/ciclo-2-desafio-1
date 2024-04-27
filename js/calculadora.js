@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const dadosMesaForm = document.getElementById("dadosMesa");
     const botaoCalcular = document.getElementById("iniciarCalculo");
-    const modalPagamento = document.getElementById("metodoPagamento");
-    
+    const modalPagamento = document.getElementById("metodoPagamento");  
     const semDesconto = document.getElementById("semDesconto");
     const comDesconto = document.getElementById("comDesconto");
-
     const modalResultado = document.getElementById("modalResultado");
     const textoResultado = document.getElementById("resultadoConta");
-
-    const fecharBotoes = document.querySelectorAll('.close');
+    const fecharBotoes = document.querySelectorAll("#concluir");
 
     botaoCalcular.addEventListener('click', function () {
         if (dadosMesaForm.checkValidity()) {
@@ -53,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let desconto = 0;
 
             if (temDesconto){
-            desconto = totalPorPessoa * 0.1;
-        }
+                desconto = totalPorPessoa * 0.1;
+            }
 
         let verificaDesconto = temDesconto ? `Desconto Aplicado: ${desconto.toFixed(2)} R$` : "Sem Desconto";
             textoResultado.innerHTML = `Total do consumo: ${valorConta.toFixed(2)} R$ <br>
-                                    Taxa de serviço: ${opcaoTaxa.toFixed(2)} R$ <br>
-                                    ${verificaDesconto} <br>
-                                    Total por pessoa: ${(totalPorPessoa - desconto).toFixed(2)} R$ <br>`
-                                        modalResultado.style.display = "block";
+                    Taxa de serviço: ${opcaoTaxa.toFixed(2)} R$ <br>
+                    ${verificaDesconto} <br>
+                    Total por pessoa: ${(totalPorPessoa - desconto).toFixed(2)} R$ <br>`
+                    modalResultado.style.display = "block";
 }
 });
