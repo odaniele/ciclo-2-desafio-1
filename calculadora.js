@@ -1,5 +1,3 @@
-const { text } = require("express");
-
 document.addEventListener('DOMContentLoaded', function () {
     const dadosMesaForm = document.getElementById("dadosMesa");
     const botaoCalcular = document.getElementById("iniciarCalculo");
@@ -58,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
             desconto = totalPorPessoa * 0.1;
         }
 
-        
-           
-
-
-
+        let verificaDesconto = temDesconto ? `Desconto Aplicado: ${desconto.toFixed(2)} R$` : "Sem Desconto";
+            textoResultado.innerHTML = `Total do consumo: ${valorConta.toFixed(2)} R$ <br>
+                                    Taxa de serviço: ${opcaoTaxa.toFixed(2)} R$ <br>
+                                    ${verificaDesconto} <br>
+                                    Total por pessoa: ${(totalPorPessoa - desconto).toFixed(2)} R$ <br>`
+                                        modalResultado.style.display = "block";
+}
 });
-
-
