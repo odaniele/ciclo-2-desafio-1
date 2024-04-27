@@ -1,33 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <h1>Cálculo da Mesa</h1>
-    <title>Calculadora de Pagamento</title>
-    <img src="https://cdn-icons-png.flaticon.com/512/4564/4564998.png">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Calculadora Patroni</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="container">
+      <img
+        src="imagem/patroni.png"
+        alt="Logo da pizzaria Patroni"/>
+
+      <form id="dadosMesa">
+        <label for="valorConta">Valor total da conta:</label>
+        <input type="number" id="valorConta" placeholder="100,00 R$" required />
+
+        <label for="opcaoTaxa">Incluir taxa de serviço:</label>
+        <input type="number" id="opcaoTaxa" placeholder="10,00 R$" required />
+
+        <label for="numeroPessoas">Quantidade de pagantes:</label>
+        <input type="number" id="numeroPessoas" placeholder="2" required />
+
+        <button id="iniciarCalculo" type="button">CALCULAR</button>
+      </form>
+    </section>
+
+    <div id="modal-container"> 
+      <div id="metodoPagamento" class="modal">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h1>Esse pagamento terá desconto?</h1>
+        </div>
+        <div class="modal-body">
+          <p>Apenas para contas pagas em pix, débito ou dinheiro.</p>
+          <button id="semDesconto" value="nao" class="semDesconto">Não</button>
+          <button id="comDesconto" value="sim" class="comDesconto">Sim</button>
+        </div>
+      </div>
+      <div id="modalResultado" class="modal">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h1>Valor da conta:</h1>
+        <p id="resultadoConta"></p>
+      </div>
+      <button id="concluir" type="button">CONCLUIR</button>
+      </div>
+    </div>
     <script src="calculadora.js"></script>
-
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-Valor da conta R$: <br>
-<input type="number" id="valor" step="0.01"><br>
-
-Número de pessoas na mesa: <br>
-<input type="number" id="pessoas" step="1"><br>
-
-Método de pagamento: <br>
-<select id="metodo">
-  <option value="1">Pix/Dinheiro</option>
-  <option value="2">Crédito</option>
-</select><br>
-
-Incluir gorjeta (10%): <input type="checkbox" id="gorjeta"><br>
-
-<input type="button" value="Calcular pagamento" onclick="calcularPagamento()">
-
-
-</body>
-
+  </body>
 </html>

@@ -1,69 +1,68 @@
+const { text } = require("express");
 
-
-/*function calcularPagamento() {
-    // Recupera os valores dos campos do formulário
-    const valorConta = parseFloat(document.getElementById("valor").value);
-    const numeroPessoas = parseInt(document.getElementById("pessoas").value);
-    const metodo = parseInt(document.getElementById("metodo").value);
-    const gorjeta = document.getElementById("gorjeta").checked ? valorConta * 0.1 : 0;
-
-    // Executa a lógica JavaScript original com base nos valores do formulário
-
+document.addEventListener('DOMContentLoaded', function () {
+    const dadosMesaForm = document.getElementById("dadosMesa");
+    const botaoCalcular = document.getElementById("iniciarCalculo");
+    const modalPagamento = document.getElementById("metodoPagamento");
     
-    let pagamentoCliente = valorConta / numeroPessoas;
+    const semDesconto = document.getElementById("semDesconto");
+    const comDesconto = document.getElementById("comDesconto");
 
-    if (gorjeta > 0) {
-        pagamentoCliente += gorjeta;
-    }
+    const modalResultado = document.getElementById("modalResultado");
+    const textoResultado = document.getElementById("resultadoConta");
 
+    const fecharBotoes = document.querySelectorAll('.close');
 
-    while(true){
-        console.log("Método de pagamento:");
-        if(metodo === 1) {
-            let desconto = (pagamentoCliente / 100) * 10;
-            let pagamento = pagamentoCliente - desconto;
-            alert("Adicionado 10% de desconto!!\nO total deste cliente é: R$" + pagamento.toFixed(2));
-            break;
-        } else if(metodo === 2) { 
-            alert("O total deste cliente é: R$" + pagamentoCliente.toFixed(2));
-            break;
+    botaoCalcular.addEventListener('click', function () {
+        if (dadosMesaForm.checkValidity()) {
+                modalPagamento.style.display = "block";
+        }else{
+            alert("Por favor, preencha todos os campos corretamente.");
         }
-    }
-}
-*/
+});
 
-function calcularPagamento() {   
-    
-    let valorConta = parseFloat(document.getElementById("valor").value);
-    let numeroPessoas = parseInt(document.getElementById("pessoas").value);
-    let metodo = parseInt(document.getElementById("metodo").value);
-    let temGorjeta = document.getElementById("gorjeta").checked 
-    let pagamentoCliente = valorConta / numeroPessoas;
-    let desconto = (pagamentoCliente/100) * 10;
-    
-    let calculoGorjeta = pagamentoCliente/100 * 10;
-    
-        if(metodo === 1 && temGorjeta){    
-                let pagamento = (pagamentoCliente - desconto);   
-                let pagamentoDesconto = (pagamento + calculoGorjeta); 
-                alert("Adicionado desconto de 10% no valor de: R$" + desconto.toFixed(2));
-                alert("O total deste cliente é: R$" + pagamentoDesconto.toFixed(2));
-            
-            }else if(metodo === 1 && !temGorjeta){
-                let pagamentoSemGorjeta = (pagamentoCliente - desconto);
-                alert("Adicionado desconto de 10% no valor de: R$" + desconto.toFixed(2));
-                alert("O total deste cliente é: R$" + pagamentoSemGorjeta.toFixed(2));
-    
-            }else if(metodo === 2 && temGorjeta){ 
-                let pagamentoSemDesconto = (pagamentoCliente + calculoGorjeta);
-                alert("O total deste cliente é: R$" + pagamentoSemDesconto.toFixed(2));
-            
-            }else{
-            alert("O total deste cliente é: R$" + pagamentoCliente.toFixed(2));
-            }
-        } 
+    semDesconto.addEventListener("click", function(){
+        calcularMesa(false);
+        modalPagamento.style.display = "none";
+    });
+
+    comDesconto.addEventListener("click", function(){
+        calcularMesa(true);
+        modalPagamento.style.display = "none"
+    })
+
+    fecharBotoes.forEach(function (button) {
+        button.addEventListener("click", function () {
+        modalPagamento.style.display = 'none';
+        modalResultado.style.display = 'none';
+    });
+});
+
+    window.addEventListener('click', function (event) {
+        if (event.target == modalPagamento || event.target == modalResultado) {
+            modalPagamento.style.display = 'none';
+            modalResultado.style.display = 'none';
+        }
+});
+
+
+    function calcularMesa(temDesconto) {
+        const valorConta = parseFloat(document.getElementById("valorConta").value);
+        const opcaoTaxa = parseFloat(document.getElementById("opcaoTaxa").value);
+        const numeroPessoas = parseFloat(document.getElementById("numeroPessoas").value);
+
+        let totalPorPessoa = (valorConta + opcaoTaxa) / numeroPessoas;
+        let desconto = 0;
+
+            if (temDesconto){
+            desconto = totalPorPessoa * 0.1;
+        }
+
         
-        calcularPagamento();
+           
 
+
+
+});
 
 
